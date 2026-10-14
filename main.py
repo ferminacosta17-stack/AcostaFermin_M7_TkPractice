@@ -19,7 +19,6 @@ root.rowconfigure(0, weight=1) #weight=1 allows the row to expand when the windo
 content = ttk.Frame(root, padding = 15)
 entry_frame = ttk.LabelFrame(content, text="Enter Item:", padding=10)
 cart_frame = ttk.LabelFrame(content, text="Shopping Cart", padding=10)
-control_frame = ttk.Frame(content, padding=10)
 
 #Adjusted the positons of Remove, Edit, Clear buttons in the cart_frame to be in a single row and aligned to the right of the frame.
 cart_button_frame = ttk.Frame(cart_frame)
@@ -208,7 +207,6 @@ total_quantity_label = ttk.Label(counter_frame, text="Total Quantity: 0")
 content.grid(column=0, row=0, sticky="nsew") # sticky="nsew" allows the frame to expand in all directions
 entry_frame.grid(column=0, row=0, padx=10, pady=10, sticky="nsew")#"n" aligns a widget to the top of the frame
 cart_frame.grid(column=1, row=0, padx=10, pady=10, sticky="nsew")
-control_frame.grid(column=0, row=1, columnspan=2, padx=10, pady=10)#control frame acts as container for other widgets and frames. 
 cart_list.grid(column=0, row=0, padx=5, pady=5, sticky="nsew") #The shopping cart listbox is positioned in the cart_frame
 
 
@@ -241,7 +239,6 @@ total_quantity_label.grid(column=1, row=1, padx=5, pady=5, sticky="e")
 
 #Positions the cart_button_frame housing the Remove, Edit, Clear buttons.
 cart_button_frame.grid(column=0, row=2, pady=10)
-
 
 #--------------------------------------------------------------------------#
 root.mainloop()
