@@ -20,10 +20,10 @@ content = ttk.Frame(root, padding = 15)
 entry_frame = ttk.LabelFrame(content, text="Enter Item:", padding=10)
 cart_frame = ttk.LabelFrame(content, text="Shopping Cart", padding=10)
 
-#Adjusted the positons of Remove, Edit, Clear buttons in the cart_frame to be in a single row and aligned to the right of the frame.
+#Adjusted the positions of Remove, Edit, Clear buttons in the cart_frame to be in a single row and aligned to the right of the frame.
 cart_button_frame = ttk.Frame(cart_frame)
 
-#Created an additional frame to positons counters to the edge of cart_frame.
+#Created an additional frame to position counters to the edge of cart_frame.
 counter_frame = ttk.Frame(cart_frame)
 
 # The following code configures the grid layout for the frames.
@@ -36,7 +36,7 @@ cart_frame.rowconfigure(0, weight=1)
 
 #DEFINE COMMANDS: The following code defines the functions that will be called when the buttons are clicked.
 
-#defining add item logic and input validation 
+#Defining add item logic and input validation 
 def add_item_to_cart():
     item = item_entry.get().strip()#.strip() removes any leading or trailing whitespace from the input.
     quantity = quantity_entry.get()
@@ -75,7 +75,7 @@ def add_item_to_cart():
     else:
         tk.messagebox.showwarning("Input Error", "Please fill in all fields.")
 
-#defning remove item logic and input validation
+#Defning remove item logic and input validation
 def remove_item_from_cart():
     selected_items = cart_list.selection()
     if selected_items:
@@ -86,7 +86,7 @@ def remove_item_from_cart():
     else:
         tk.messagebox.showwarning("Selection Error", "Please select an item to remove.")
 
-#defining clear cart logic
+#Defining clear cart logic
 #Modified function, asks users to confirm befor clearing. 
 def clear_shopping_cart(confirm=True):
     if confirm and cart_list.get_children():
@@ -123,7 +123,7 @@ def create_new_order():
     else:
         tk.messagebox.showinfo("No Items", "The shopping cart is already empty.")
 
-#defeing edit item logic and input validation
+#Defeing edit item logic and input validation
 def edit_item_in_cart():
     selected_items = cart_list.selection()
     if selected_items:
@@ -164,11 +164,11 @@ root.config(menu=menu_bar)
 #Buttons to interact with each frame.
 add_item = ttk.Button(entry_frame, text="Add Item", command=add_item_to_cart)\
 
-#Moved buttons to frame called cart_button_frame to allow for better alignment and organization of the buttons in the cart_frame.
+#Moved buttons to a frame called cart_button_frame to allow for better alignment and organization of the buttons in the cart_frame.
 remove_item = ttk.Button(cart_button_frame, text="Remove Item", command=remove_item_from_cart)
 clear_cart = ttk.Button(cart_button_frame, text="Clear Cart", command=clear_shopping_cart)
 
-#Added an additional Edit Item Buttom to allow the user to edit the selected item in the shopping cart. 
+#Added an additional Edit Item button to allow the user to edit the selected item in the shopping cart. 
 #The edit_item function is defined to handle the logic for editing an item.
 edit_item = ttk.Button(cart_button_frame, text="Edit Item", command=edit_item_in_cart)
 
@@ -228,7 +228,7 @@ quantity_entry.grid(column=1, row=1, padx=5, pady=5)
 category_label.grid(column=0, row=2, padx=5, pady=5, sticky="w")
 category_entry.grid(column=1, row=2, padx=5, pady=5)
 
-#Added positoning to the counter_frame.
+#Added positioning to the counter_frame.
 counter_frame.grid(column=0, row=1, columnspan=2, sticky="ew", padx=5, pady=5)
 counter_frame.columnconfigure(1, weight=1) #allows the item counter label to expand when the window is resized
 
