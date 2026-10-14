@@ -75,7 +75,7 @@ def add_item_to_cart():
     else:
         tk.messagebox.showwarning("Input Error", "Please fill in all fields.")
 
-#Defning remove item logic and input validation
+#Defining remove item logic and input validation
 def remove_item_from_cart():
     selected_items = cart_list.selection()
     if selected_items:
@@ -102,7 +102,7 @@ def clear_shopping_cart(confirm=True):
     update_item_count() #update the item counter after removing all items
 
 
-#defning function to update the item counter in the shopping cart frame
+#Defining function to update the item counter in the shopping cart frame
 def update_item_count():
     unique_items = len(cart_list.get_children())
     total_items = sum(int(cart_list.item(item, "values")[1]) for item in cart_list.get_children())
@@ -123,7 +123,7 @@ def create_new_order():
     else:
         tk.messagebox.showinfo("No Items", "The shopping cart is already empty.")
 
-#Defeing edit item logic and input validation
+#Defining edit item logic and input validation
 def edit_item_in_cart():
     selected_items = cart_list.selection()
     if selected_items:
