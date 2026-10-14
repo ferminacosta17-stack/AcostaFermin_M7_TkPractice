@@ -87,7 +87,7 @@ def remove_item_from_cart():
         tk.messagebox.showwarning("Selection Error", "Please select an item to remove.")
 
 #Defining clear cart logic
-#Modified function, asks users to confirm befor clearing. 
+#Modified function, asks users to confirm before clearing. 
 def clear_shopping_cart(confirm=True):
     if confirm and cart_list.get_children():
         if not tk.messagebox.askyesno(
@@ -110,7 +110,7 @@ def update_item_count():
     item_count_label.config(text=f"Total Items: {unique_items}")
     total_quantity_label.config(text=f"Total Quantity: {total_items}")
 
-#Optimizing the Create Order function to prompt user for confirmation before clearing the shopping cart.
+#Optimizing the Create Order function to prompt the user for confirmation before clearing the shopping cart.
 def create_new_order():
     if cart_list.get_children():  # Check if the cart is not empty
         confirm = tk.messagebox.askyesno("Confirm New Order", "Are you sure you want to create a new order? This will clear the current shopping cart.")
